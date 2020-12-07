@@ -42,7 +42,6 @@ def get_solution_7b(rules: "dict{str: (int, str)}") -> int:
     # Start at -1 to not count the initial shiny gold bag
     count = -1
     queue = deque([(0, "shiny gold")])
-    visited = {}
     while len(queue) > 0:
         curr = queue.pop()
         count += 1
