@@ -33,7 +33,7 @@ def part_one(filename="input.txt") -> int:
         filename (str): The text file with problem input. (Default: "input.txt")
 
     Returns:
-        (str) Print out of part one solution.
+        (int) Number of total calories.
     """
     data = get_input(filename, int)
     output = -1
