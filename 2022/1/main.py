@@ -49,7 +49,7 @@ def part_two(filename="input.txt", top_elf_count=3) -> int:
 
     Arguments:
         filename (str): The text file with problem input. (Default: "input.txt")
-        top_elf_count (int): Number of top calories elves to add. (Default: 3)
+        top_elf_count (int): Number of top calories elves to add. (Default: 3-1)
 
     Returns:
         (int) Number of total calories.

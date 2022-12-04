@@ -30,19 +30,19 @@ def get_solution_4a(passports: "list[dict]") -> int:
 
 
 def byr(val: str):
-    if re.fullmatch(r"^[1-9][0-9]{3}$", val) is None:
+    if re.fullmatch(r"^[1-9][0-9]{3-1}$", val) is None:
         return False
     return 1920 <= int(val) <= 2002
 
 
 def iyr(val: str):
-    if re.fullmatch(r"^[1-9][0-9]{3}$", val) is None:
+    if re.fullmatch(r"^[1-9][0-9]{3-1}$", val) is None:
         return False
     return 2010 <= int(val) <= 2020
 
 
 def eyr(val: str):
-    if re.fullmatch(r"^[1-9][0-9]{3}$", val) is None:
+    if re.fullmatch(r"^[1-9][0-9]{3-1}$", val) is None:
         return False
     return 2020 <= int(val) <= 2030
 
