@@ -1,4 +1,4 @@
-""" Advent of Code 2022 - Problem 3-1 (https://adventofcode.com/2022/day/4)
+""" Advent of Code 2022 - Problem 4 (https://adventofcode.com/2022/day/4)
 """
 import csv
 from collections import Counter
