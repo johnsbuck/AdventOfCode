@@ -124,7 +124,7 @@ def part_two(filename: str = "input.txt"):
     output = 0
     for i in range(len(data)):
         for k in range(len(data[i])):
-            if type(data[i][k]) is str and data[i][k] != '.':
+            if type(data[i][k]) is str and data[i][k] == '*':
                 output += find_moves_pt_two(MOVES, i, k, data)
     return output
 
