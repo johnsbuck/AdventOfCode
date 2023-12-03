@@ -96,7 +96,7 @@ def part_one(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 1 Solution
         """
     MOVES = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
     data = get_input(filename, str)
@@ -116,7 +116,7 @@ def part_two(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 2 Solution
         """
     MOVES = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
     data = get_input(filename, str)

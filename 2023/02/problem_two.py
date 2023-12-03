@@ -45,7 +45,7 @@ def part_one(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 1 Solution
         """
     data = get_input(filename, str)
     COLORS_DICT = {'red': 12, 'green': 13, 'blue': 14}
@@ -69,7 +69,7 @@ def part_two(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 2 Solution
         """
     data = get_input(filename, str)
 

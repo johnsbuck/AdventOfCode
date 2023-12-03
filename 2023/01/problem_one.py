@@ -35,7 +35,7 @@ def part_one(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 1 Solution
         """
     data = get_input(filename, str)
     output = 0
@@ -53,7 +53,7 @@ def part_two(filename: str = "input.txt"):
             filename (str): The text file with problem input. (Default: "input.txt")
 
         Returns:
-            (int) Number of total calories.
+            (int) Part 2 Solution
         """
     data = get_input(filename, str)
     DIGIT_NAMES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
