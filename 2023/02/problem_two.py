@@ -1,4 +1,4 @@
-""" Advent of Code 2023 - Problem 1 (https://adventofcode.com/2023/day/1)
+""" Advent of Code 2023 - Problem 2 (https://adventofcode.com/2023/day/2)
 """
 import csv
 import re
@@ -15,17 +15,27 @@ def get_input(filename: str = "input.txt", conv_type: Union[Type[int], Type[floa
         Returns:
             (list(conv_type)) A list of inputs formatted to the given python type.
         """
-    data = [[]]
+    data = []
+    COLORS = ['green', 'red', 'blue']
 
     with open(filename, 'r') as f:
-        for row in csv.reader(f):
-            if len(row) == 0:
-                data.append([])
-            else:
-                data[-1] += row
-                data[-1][-1] = conv_type(data[-1][-1])
+        for row in f:
+            data.append({})
+            row = re.split(r', |; |: |\n', row)
+            for i in range(1, len(row) - 1):
+                key_color = None
+                for color in COLORS:
+                    if color in row[i]:
+                        key_color = color
+                        break
+                num = re.match('[0-9]+', row[i]).group(0)
 
-    return data[0]
+                if key_color not in data[-1]:
+                    data[-1][key_color] = int(num)
+                else:
+                    data[-1][key_color] = max(int(num), data[-1][key_color])
+
+    return data
 
 
 def part_one(filename: str = "input.txt"):
@@ -38,11 +48,17 @@ def part_one(filename: str = "input.txt"):
             (int) Number of total calories.
         """
     data = get_input(filename, str)
+    COLORS_DICT = {'red': 12, 'green': 13, 'blue': 14}
+
     output = 0
-    for row in data:
-        digits = re.findall("[0-9]", row)
-        num = int(digits[0] + digits[-1])
-        output += num
+    for i in range(len(data)):
+        valid = True
+        for color in COLORS_DICT:
+            if data[i][color] > COLORS_DICT[color]:
+                valid = False
+                break
+        if valid:
+            output += i + 1
     return output
 
 
@@ -56,18 +72,14 @@ def part_two(filename: str = "input.txt"):
             (int) Number of total calories.
         """
     data = get_input(filename, str)
-    DIGIT_NAMES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    DIGIT_DICT = {DIGIT_NAMES[i]: str(i) for i in range(len(DIGIT_NAMES))}
-    pattern = '(?=(' + '|'.join(DIGIT_NAMES) + "|[0-9]" + '))'
+
     output = 0
-    for row in data:
-        digits = re.findall(pattern, row)
-        if len(digits[0]) > 1:
-            digits[0] = DIGIT_DICT[digits[0]]
-        if len(digits[-1]) > 1:
-            digits[-1] = DIGIT_DICT[digits[-1]]
-        num = int(digits[0] + digits[-1])
-        output += num
+    for i in range(len(data)):
+        power = 1
+        for k in data[i]:
+            power *= data[i][k]
+        output += power
+
     return output
 
 
