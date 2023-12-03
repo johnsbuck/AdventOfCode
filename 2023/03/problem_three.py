@@ -130,7 +130,7 @@ def part_two(filename: str = "input.txt"):
 
 
 if __name__ == "__main__":
-    print("Advent of Code - 2023 - Problem 01")
+    print("Advent of Code - 2023 - Problem 03")
     print("----------------------------------")
     print(part_one())
     print("EOP")
