@@ -4,7 +4,6 @@ from typing import List
 import re
 
 import numpy as np
-import pandas as pd
 
 
 def get_input(filename: str = "input.txt", conv_type: 'type' = int) -> 'List[List[conv_type]]':
